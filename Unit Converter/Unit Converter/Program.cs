@@ -20,7 +20,7 @@ namespace Unit_Converter
 
             string input = Console.ReadLine();
 
-            int km, m, cm = 0;
+            double km, m, cm = 0;
 
             switch (input) //using switch statement as it is easier to read for other developers and users.
             {
@@ -53,29 +53,29 @@ namespace Unit_Converter
             Console.ReadKey();
         }
     }
-    public class UnitConverter //class where methods are stored for each conversion
+    public class UnitConverter //class where methods are stored for each conversions
     {
-        public static int KmToInches(string unitKilometer)
+        public static double KmToInches(string unitKilometer)
         {
-            int kilometer = int.Parse(unitKilometer);
+            double kilometer = double.Parse(unitKilometer);
 
-            int inches = (kilometer * 39370);
-
+            double inches = (kilometer * 39370.1);
+          
             return inches;
         }
-        public static int MToInches(string unitMeter)
+        public static double MToInches(string unitMeter)
         {
-            int meter = int.Parse(unitMeter);
+            double meter = double.Parse(unitMeter);
 
-            int inches = (meter * (39370 / 1000));
+            double inches = (meter * (39370 / 1000));
                   
             return inches;
         }
-        public static int CmToInches(string unitCentimeter)
+        public static double CmToInches(string unitCentimeter)
         {
-            int centimeter = int.Parse(unitCentimeter);
+            double centimeter = double.Parse(unitCentimeter);
 
-            int inches = (centimeter * (39370 / 100000));
+            double inches = (centimeter * (39370 / 100000));
 
             return inches;
         }
