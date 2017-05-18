@@ -12,21 +12,29 @@ namespace Unit_Converter
         {
             //1KM = 39370.1 inches
             //1KM = 3280.84 foot
+            //1KM = 0.621371 miles
             Console.WriteLine("***Unit Converter 1.0***");
-            Console.ReadLine();
-
+            Start:
+            Console.WriteLine("\n****Lengths****");
             Console.WriteLine("Press 1 To convert from Kilometers to Inches "); //asking for user input
-            Console.WriteLine("Press 2 To convert from meters to Inches ");
-            Console.WriteLine("Press 3 To convert from centimeters to Inches ");
-            Console.WriteLine("Press 4 To convert from Kilometers to feet");
-            Console.WriteLine("Press 5 To convert from meters to feet");
-            Console.WriteLine("Press 6 To convert from centimeters to feet");
+            Console.WriteLine("Press 2 To convert from Meters to Inches ");
+            Console.WriteLine("Press 3 To convert from Centimeters to Inches ");
+            Console.WriteLine("Press 4 To convert from Kilometers to Feet");
+            Console.WriteLine("Press 5 To convert from Meters to Feet");
+            Console.WriteLine("Press 6 To convert from Centimeters to Feet");
+            Console.WriteLine("Press 7 To convert from Kilometers to Miles");
+            Console.WriteLine("Press 8 To convert from Meters to Miles");
+            Console.WriteLine("Press 9 to Convert from Centimeters to Miles");
+
+            //Console.WriteLine("****Measurements****");
+            //Console.WriteLine("****Temperature****");
+            //Console.Writeline("****Mass****");
 
             Console.Write("\n = ");
 
             string input = Console.ReadLine();
 
-            double km, m, cm, kmF, mF, cmF = 0;
+            double km, m, cm, kmF, mF, cmF, kmM, mM, cmM = 0;
 
             switch (input) //using switch statement as it is easier to read for other developers and users.
             {
@@ -69,13 +77,38 @@ namespace Unit_Converter
                     Console.WriteLine("\nFeet = " + cmF);
                     Console.ReadLine();
                     break;
-
+                case "7":
+                    Console.Write("Enter a value in Kilometers: ");
+                    kmM = UnitConverter.KmtoMiles(Console.ReadLine());
+                    Console.WriteLine("\n Miles = " + kmM);
+                    break;
+                case "8":
+                    Console.Write("Enter a value in Meters: ");
+                    mM = UnitConverter.MtoMiles(Console.ReadLine());
+                    Console.WriteLine("Miles = " + mM);
+                    break;
+                case "9":
+                    Console.Write("Enter a value in Centimeters: ");
+                    cmM = UnitConverter.CMtoMiles(Console.ReadLine());
+                    Console.WriteLine("Miles = " + cmM);
+                    break;
                 default:
                     Console.WriteLine("please select something to convert");
                     break;
             }
-            Console.WriteLine("Press any key to quit the app...");
-            Console.ReadKey();
+            Console.WriteLine("Do you want to continue? \n Press 1 if so, or to exit press 2.");
+            Console.Write("= ");
+
+            string input2 = Console.ReadLine();
+
+            if (input2 == "1")
+            {
+                goto Start;
+            }
+            else
+            {
+                System.Environment.Exit(1);
+            }
         }
     }
     public class UnitConverter //class where methods are stored for each conversions
@@ -130,6 +163,31 @@ namespace Unit_Converter
             double feet = (cmF * (3280.84 / 100000));
 
             return feet;
+        }
+        //Miles conversion
+        public static double KmtoMiles(string unitKMtoM)
+        {
+            double kmM = double.Parse(unitKMtoM);
+
+            double miles = (kmM * 0.621371);
+
+            return miles;
+        }
+        public static double MtoMiles(string unitMtoM)
+        {
+            double mM = double.Parse(unitMtoM);
+
+            double miles = (mM * (0.621371 / 1000));
+
+            return miles;
+        }
+        public static double CMtoMiles(string unitCmtoM)
+        {
+            double cmM = double.Parse(unitCmtoM);
+
+            double miles = (cmM * (0.621371 / 100000));
+
+            return miles;
         }
     }
 }
