@@ -13,18 +13,25 @@ namespace Unit_Converter
             //1KM = 39370.1 inches
             //1KM = 3280.84 foot
             //1KM = 0.621371 miles
+            //1KM = 1093.61 yards 
             Console.WriteLine("***Unit Converter 1.0***");
             Start:
             Console.WriteLine("\n****Lengths****");
             Console.WriteLine("Press 1 To convert from Kilometers to Inches "); //asking for user input
             Console.WriteLine("Press 2 To convert from Meters to Inches ");
             Console.WriteLine("Press 3 To convert from Centimeters to Inches ");
+
             Console.WriteLine("Press 4 To convert from Kilometers to Feet");
             Console.WriteLine("Press 5 To convert from Meters to Feet");
             Console.WriteLine("Press 6 To convert from Centimeters to Feet");
+
             Console.WriteLine("Press 7 To convert from Kilometers to Miles");
             Console.WriteLine("Press 8 To convert from Meters to Miles");
             Console.WriteLine("Press 9 to Convert from Centimeters to Miles");
+
+            Console.WriteLine("Press 10 to convert from Kilometers to Yards");
+            Console.WriteLine("Press 11 to convert from Meters to Yards");
+            Console.WriteLine("Press 12 to convert from Centimeters to Yards");
 
             //Console.WriteLine("****Measurements****");
             //Console.WriteLine("****Temperature****");
@@ -34,7 +41,7 @@ namespace Unit_Converter
 
             string input = Console.ReadLine();
 
-            double km, m, cm, kmF, mF, cmF, kmM, mM, cmM = 0;
+            double km, m, cm, kmF, mF, cmF, kmM, mM, cmM, kmY, mY, cmY = 0;
 
             switch (input) //using switch statement as it is easier to read for other developers and users.
             {
@@ -91,6 +98,21 @@ namespace Unit_Converter
                     Console.Write("Enter a value in Centimeters: ");
                     cmM = UnitConverter.CMtoMiles(Console.ReadLine());
                     Console.WriteLine("Miles = " + cmM);
+                    break;
+                case "10":
+                    Console.Write("Enter a value in Kilometers: ");
+                    kmY = UnitConverter.KmtoYards(Console.ReadLine());
+                    Console.WriteLine("Yards = " + kmY);
+                    break;
+                case "11":
+                    Console.Write("Enter a value in Meters: ");
+                    mY = UnitConverter.MtoYards(Console.ReadLine());
+                    Console.WriteLine("Yards = " + mY);
+                    break;
+                case "12":
+                    Console.Write("Enter a value in Centimeters: ");
+                    cmY = UnitConverter.CmtoYards(Console.ReadLine());
+                    Console.WriteLine("Yards = " + cmY);
                     break;
                 default:
                     Console.WriteLine("please select something to convert");
@@ -188,6 +210,31 @@ namespace Unit_Converter
             double miles = (cmM * (0.621371 / 100000));
 
             return miles;
+        }
+        //Yards conversion
+        public static double KmtoYards(string unitKMtoY)
+        {
+            double kmY = double.Parse(unitKMtoY);
+
+            double yards = (kmY * 1093.61);
+
+            return yards;
+        }
+        public static double MtoYards(string unitMtoY)
+        {
+            double mY = double.Parse(unitMtoY);
+
+            double yards = (mY * (1093.61 / 1000));
+
+            return yards;
+        }
+        public static double CmtoYards(string unitCmtoY)
+        {
+            double cmY = double.Parse(unitCmtoY);
+
+            double yards = (cmY * (1093.61 / 100000));
+
+            return yards;
         }
     }
 }
