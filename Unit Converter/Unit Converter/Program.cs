@@ -15,25 +15,18 @@ namespace Unit_Converter
             //1KM = 0.621371 miles
             //1KM = 1093.61 yards 
             Console.WriteLine("***Unit Converter 1.0***");
+
             Start:
             Console.WriteLine("\n****Lengths****");
-            Console.WriteLine("Press 1 To convert from Kilometers to Inches "); //asking for user input
-            Console.WriteLine("Press 2 To convert from Meters to Inches ");
-            Console.WriteLine("Press 3 To convert from Centimeters to Inches ");
+            Console.WriteLine("Press 1 To convert from Metric to Inches "); //asking for user input
 
-            Console.WriteLine("Press 4 To convert from Kilometers to Feet");
-            Console.WriteLine("Press 5 To convert from Meters to Feet");
-            Console.WriteLine("Press 6 To convert from Centimeters to Feet");
+            Console.WriteLine("Press 2 To convert from Metric to Feet");
 
-            Console.WriteLine("Press 7 To convert from Kilometers to Miles");
-            Console.WriteLine("Press 8 To convert from Meters to Miles");
-            Console.WriteLine("Press 9 to Convert from Centimeters to Miles");
+            Console.WriteLine("Press 3 To convert from Metric to Miles");
 
-            Console.WriteLine("Press 10 to convert from Kilometers to Yards");
-            Console.WriteLine("Press 11 to convert from Meters to Yards");
-            Console.WriteLine("Press 12 to convert from Centimeters to Yards");
+            Console.WriteLine("Press 4 to convert from Metric to Yards");
 
-            //Console.WriteLine("****Measurements****");
+            //Console.WriteLine("****Volume****");
             //Console.WriteLine("****Temperature****");
             //Console.Writeline("****Mass****");
 
@@ -46,79 +39,132 @@ namespace Unit_Converter
             switch (input) //using switch statement as it is easier to read for other developers and users.
             {
                 case "1":
-                    Console.Write("Enter a value in kilometers: ");
-                    km = UnitConverter.KmToInches(Console.ReadLine());
-                    Console.WriteLine("\n Inches = " + km);
-                    Console.ReadLine();
+
+                    Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
+                    string selection1 = Console.ReadLine();
+
+                    if (selection1 == "A")
+                    {
+                        Console.Write("Enter a value in Kilometers: ");
+
+                        km = UnitConverter.KmToInches(Console.ReadLine());
+
+                        Console.WriteLine("\n Inches = " + km);
+                    }
+                    if (selection1 == "B")
+                    {
+                        Console.Write("Enter a value in Meters: ");
+
+                        m = UnitConverter.MToInches(Console.ReadLine());
+
+                        Console.WriteLine("\n Inches = " + m);
+                    }
+                    if (selection1 == "C")
+                    {
+                        Console.Write("Enter a value in Centimeters: ");
+
+                        cm = UnitConverter.CmToInches(Console.ReadLine());
+
+                        Console.WriteLine("\n Inches = " + cm);
+                    }
+
                     break;
 
                 case "2":
-                    Console.Write("Enter a value in meters: ");
-                    m = UnitConverter.KmToInches(Console.ReadLine());
-                    Console.WriteLine("\n Inches = " + m);
-                    Console.ReadLine();
+                    Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
+                    string selection2 = Console.ReadLine();
+
+                    if (selection2 == "A")
+                    {
+                        Console.Write("Enter a value in Kilometers: ");
+
+                        kmF = UnitConverter.KmtoFeet(Console.ReadLine());
+
+                        Console.WriteLine("Feet = " + kmF);
+                    }
+                    if (selection2 == "B")
+                    {
+                        Console.Write("Enter a value in Meters: ");
+
+                        mF = UnitConverter.MtoFeet(Console.ReadLine());
+
+                        Console.WriteLine("Feet = " + mF);
+                    }
+                    if (selection2 == "C")
+                    {
+                        Console.Write("Enter a value in Centimeters: ");
+
+                        cmF = UnitConverter.CmtoFeet(Console.ReadLine());
+
+                        Console.WriteLine("Feet = " + cmF);
+                    }
                     break;
 
                 case "3":
-                    Console.Write("Enter a value in centimeters: ");
-                    cm = UnitConverter.CmToInches(Console.ReadLine());
-                    Console.WriteLine("\n Inches = " + cm);
-                    Console.ReadLine();
+                    Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
+                    string selection3 = Console.ReadLine();
+
+                    if (selection3 == "A")
+                    {
+                        Console.Write("Enter a value in Kilometers: ");
+
+                        kmM = UnitConverter.KmtoMiles(Console.ReadLine());
+
+                        Console.WriteLine("Miles = " + kmM);
+                    }
+                    if (selection3 == "B")
+                    {
+                        Console.Write("Enter a value in Meters: ");
+
+                        mM = UnitConverter.MtoMiles(Console.ReadLine());
+
+                        Console.WriteLine("Miles = " + mM);
+                    }
+                    if (selection3 == "C")
+                    {
+                        Console.Write("Enter a value in Centimeters: ");
+
+                        cmM = UnitConverter.CMtoMiles(Console.ReadLine());
+
+                        Console.WriteLine("Miles = " + cmM);
+                    }
                     break;
 
                 case "4":
-                    Console.Write("Enter a value in Kilometers: ");
-                    kmF = UnitConverter.KmtoFeet(Console.ReadLine());
-                    Console.WriteLine("\nFeet = " + kmF);
-                    Console.ReadLine();
+                    Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
+                    string selection4 = Console.ReadLine();
+
+                    if (selection4 == "A")
+                    {
+                        Console.Write("Enter a value in Kilometers: ");
+
+                        kmY = UnitConverter.KmtoYards(Console.ReadLine());
+
+                        Console.WriteLine("Yards = " + kmY);
+                    }
+                    if (selection4 == "B")
+                    {
+                        Console.Write("Enter a value in Meters: ");
+
+                        mY = UnitConverter.MtoYards(Console.ReadLine());
+
+                        Console.WriteLine("Yards = " + mY);
+                    }
+                    if (selection4 == "C")
+                    {
+                        Console.Write("Enter a value in Centimeters: ");
+
+                        cmY = UnitConverter.CmtoYards(Console.ReadLine());
+
+                        Console.WriteLine("Yards = " + cmY);
+                    }
                     break;
-                case "5":
-                    Console.Write("Enter a value in Meters: ");
-                    mF = UnitConverter.MtoFeet(Console.ReadLine());
-                    Console.WriteLine("\nFeet = " + mF);
-                    Console.ReadLine();
-                    break;
-                case "6":
-                    Console.Write("Enter a value in Centimeters: ");
-                    cmF = UnitConverter.CmtoFeet(Console.ReadLine());
-                    Console.WriteLine("\nFeet = " + cmF);
-                    Console.ReadLine();
-                    break;
-                case "7":
-                    Console.Write("Enter a value in Kilometers: ");
-                    kmM = UnitConverter.KmtoMiles(Console.ReadLine());
-                    Console.WriteLine("\n Miles = " + kmM);
-                    break;
-                case "8":
-                    Console.Write("Enter a value in Meters: ");
-                    mM = UnitConverter.MtoMiles(Console.ReadLine());
-                    Console.WriteLine("Miles = " + mM);
-                    break;
-                case "9":
-                    Console.Write("Enter a value in Centimeters: ");
-                    cmM = UnitConverter.CMtoMiles(Console.ReadLine());
-                    Console.WriteLine("Miles = " + cmM);
-                    break;
-                case "10":
-                    Console.Write("Enter a value in Kilometers: ");
-                    kmY = UnitConverter.KmtoYards(Console.ReadLine());
-                    Console.WriteLine("Yards = " + kmY);
-                    break;
-                case "11":
-                    Console.Write("Enter a value in Meters: ");
-                    mY = UnitConverter.MtoYards(Console.ReadLine());
-                    Console.WriteLine("Yards = " + mY);
-                    break;
-                case "12":
-                    Console.Write("Enter a value in Centimeters: ");
-                    cmY = UnitConverter.CmtoYards(Console.ReadLine());
-                    Console.WriteLine("Yards = " + cmY);
-                    break;
+
                 default:
                     Console.WriteLine("please select something to convert");
                     break;
             }
-            Console.WriteLine("Do you want to continue? \n Press 1 if so, or to exit press 2.");
+            Console.WriteLine("Do you want to continue? \n Press 1 if so, or to exit press any other key.");
             Console.Write("= ");
 
             string input2 = Console.ReadLine();
