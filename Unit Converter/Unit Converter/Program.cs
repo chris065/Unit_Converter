@@ -14,7 +14,7 @@ namespace Unit_Converter
             //1KM = 3280.84 foot
             //1KM = 0.621371 miles
             //1KM = 1093.61 yards 
-            Console.WriteLine("***Unit Converter 1.0***");
+            Console.WriteLine("***Unit Converter 1.1***");
 
             Start:
             Console.WriteLine("\n****Lengths****");
@@ -53,7 +53,7 @@ namespace Unit_Converter
                     Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
                     string selection1 = Console.ReadLine();
 
-                    if (selection1 == "A")
+                    if (selection1 == "A" || selection1 == "a")
                     {
                         Console.Write("Enter a value in Kilometers: ");
 
@@ -61,7 +61,7 @@ namespace Unit_Converter
 
                         Console.WriteLine("\n Inches = " + km);
                     }
-                    if (selection1 == "B")
+                    if (selection1 == "B" || selection1 == "b")
                     {
                         Console.Write("Enter a value in Meters: ");
 
@@ -69,7 +69,7 @@ namespace Unit_Converter
 
                         Console.WriteLine("\n Inches = " + m);
                     }
-                    if (selection1 == "C")
+                    if (selection1 == "C" || selection1 == "c")
                     {
                         Console.Write("Enter a value in Centimeters: ");
 
@@ -84,7 +84,7 @@ namespace Unit_Converter
                     Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
                     string selection2 = Console.ReadLine();
 
-                    if (selection2 == "A")
+                    if (selection2 == "A" || selection2 == "a")
                     {
                         Console.Write("Enter a value in Kilometers: ");
 
@@ -92,7 +92,7 @@ namespace Unit_Converter
 
                         Console.WriteLine("Feet = " + kmF);
                     }
-                    if (selection2 == "B")
+                    if (selection2 == "B" || selection2 == "b")
                     {
                         Console.Write("Enter a value in Meters: ");
 
@@ -100,7 +100,7 @@ namespace Unit_Converter
 
                         Console.WriteLine("Feet = " + mF);
                     }
-                    if (selection2 == "C")
+                    if (selection2 == "C" || selection2 == "c")
                     {
                         Console.Write("Enter a value in Centimeters: ");
 
@@ -114,7 +114,7 @@ namespace Unit_Converter
                     Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
                     string selection3 = Console.ReadLine();
 
-                    if (selection3 == "A")
+                    if (selection3 == "A" || selection3 == "a")
                     {
                         Console.Write("Enter a value in Kilometers: ");
 
@@ -122,7 +122,7 @@ namespace Unit_Converter
 
                         Console.WriteLine("Miles = " + kmM);
                     }
-                    if (selection3 == "B")
+                    if (selection3 == "B" || selection3 == "b")
                     {
                         Console.Write("Enter a value in Meters: ");
 
@@ -130,7 +130,7 @@ namespace Unit_Converter
 
                         Console.WriteLine("Miles = " + mM);
                     }
-                    if (selection3 == "C")
+                    if (selection3 == "C" || selection3 == "c")
                     {
                         Console.Write("Enter a value in Centimeters: ");
 
@@ -144,7 +144,7 @@ namespace Unit_Converter
                     Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
                     string selection4 = Console.ReadLine();
 
-                    if (selection4 == "A")
+                    if (selection4 == "A" || selection4 == "a")
                     {
                         Console.Write("Enter a value in Kilometers: ");
 
@@ -152,7 +152,7 @@ namespace Unit_Converter
 
                         Console.WriteLine("Yards = " + kmY);
                     }
-                    if (selection4 == "B")
+                    if (selection4 == "B" || selection4 == "b")
                     {
                         Console.Write("Enter a value in Meters: ");
 
@@ -160,7 +160,7 @@ namespace Unit_Converter
 
                         Console.WriteLine("Yards = " + mY);
                     }
-                    if (selection4 == "C")
+                    if (selection4 == "C" || selection4 == "c")
                     {
                         Console.Write("Enter a value in Centimeters: ");
 
