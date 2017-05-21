@@ -26,19 +26,29 @@ namespace Unit_Converter
 
             Console.WriteLine("Press 4 to convert from Metric to Yards");
 
+            Console.WriteLine("\n****Temperature****");
+
+            Console.WriteLine("Press 5 To convert from Celsius to Fahrenheit");
+
+            Console.WriteLine("Press 6 to convert from Celsus to Kelvin");
+
+            Console.WriteLine("Press 7 to convert from Fahrenheit to Kelvin");
+
             //Console.WriteLine("****Volume****");
-            //Console.WriteLine("****Temperature****");
             //Console.Writeline("****Mass****");
 
             Console.Write("\n = ");
 
             string input = Console.ReadLine();
 
-            double km, m, cm, kmF, mF, cmF, kmM, mM, cmM, kmY, mY, cmY = 0;
+            double km, m, cm, kmF, mF, cmF, kmM, mM, cmM, kmY, mY, cmY = 0; //lenghts
+
+            double cF, cK, fK = 0;
+
 
             switch (input) //using switch statement as it is easier to read for other developers and users.
             {
-                case "1":
+                case "1": //inches conversion
 
                     Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
                     string selection1 = Console.ReadLine();
@@ -70,7 +80,7 @@ namespace Unit_Converter
 
                     break;
 
-                case "2":
+                case "2": //feet conversion
                     Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
                     string selection2 = Console.ReadLine();
 
@@ -100,7 +110,7 @@ namespace Unit_Converter
                     }
                     break;
 
-                case "3":
+                case "3": //miles conversion
                     Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
                     string selection3 = Console.ReadLine();
 
@@ -130,7 +140,7 @@ namespace Unit_Converter
                     }
                     break;
 
-                case "4":
+                case "4": //yards conversion
                     Console.Write("Convert from Kilometers (Press A), Meters (B) or Centimeters (C): ");
                     string selection4 = Console.ReadLine();
 
@@ -158,6 +168,29 @@ namespace Unit_Converter
 
                         Console.WriteLine("Yards = " + cmY);
                     }
+                    break;
+
+                case "5": //fahrenheit conversion
+                    Console.Write("Enter a value in Celsius: ");
+
+                    cF = UnitConverter.CtoF(Console.ReadLine());
+
+                    Console.WriteLine("Fahrenheit = " + cF);
+
+                    break;
+                case "6": //kelvin conversion
+                    Console.Write("Enter a value in Celsius: ");
+
+                    cK = UnitConverter.CtoK(Console.ReadLine());
+
+                    Console.WriteLine("Kelvin = " + cK);
+                    break;
+                case "7": //f to kelvin conversion
+                    Console.Write("Enter a value in Fahrenheit: ");
+
+                    fK = UnitConverter.FtoK(Console.ReadLine());
+
+                    Console.WriteLine("Kelvin = " + Math.Round(fK, 3));
                     break;
 
                 default:
@@ -281,6 +314,31 @@ namespace Unit_Converter
             double yards = (cmY * (1093.61 / 100000));
 
             return yards;
+        }
+        //tempreature conversion
+        public static double CtoF(string unitCtoF)
+        {
+            double cf = double.Parse(unitCtoF);
+
+            double f = (cf * 9/5 + 32);
+
+            return f; 
+        }
+        public static double CtoK(string unitCtoK)
+        {
+            double ck = double.Parse(unitCtoK);
+
+            double k = (ck + 273.15);
+
+            return k;
+        }
+        public static double FtoK(string unitFtoK)
+        {
+            double fk = double.Parse(unitFtoK);
+
+            double k = ((fk + 459.67) * 5 / 9);
+
+            return k;
         }
     }
 }
