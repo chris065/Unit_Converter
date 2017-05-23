@@ -14,7 +14,12 @@ namespace Unit_Converter
             //1KM = 3280.84 foot
             //1KM = 0.621371 miles
             //1KM = 1093.61 yards 
-            Console.WriteLine("***Unit Converter 1.1***");
+
+            //1KG = 0.000984207 Imperial Ton 
+            //KG = 0.157473 Stone
+            //1KG = 2.20462 Pounds
+            //1KG = 35.274 Ounce
+            Console.WriteLine("***Unit Converter 1.2***");
 
             Start:
             Console.WriteLine("\n****Lengths****");
@@ -34,8 +39,17 @@ namespace Unit_Converter
 
             Console.WriteLine("Press 7 to convert from Fahrenheit to Kelvin");
 
+
+            Console.WriteLine("\n****Mass****");
+            Console.WriteLine("Press 8 to convert from Metric to Impreial Ton");
+
+            Console.WriteLine("Press 9 to convert from Metric to Stone");
+
+            Console.WriteLine("Press 10 to convert from Metric to Pounds");
+
+            Console.WriteLine("Press 11 to convert from Metric to Ounces");
+
             //Console.WriteLine("****Volume****");
-            //Console.Writeline("****Mass****");
 
             Console.Write("\n = ");
 
@@ -43,7 +57,7 @@ namespace Unit_Converter
 
             double km, m, cm, kmF, mF, cmF, kmM, mM, cmM, kmY, mY, cmY = 0; //lenghts
 
-            double cF, cK, fK = 0;
+            double cF, cK, fK = 0; //temp
 
 
             switch (input) //using switch statement as it is easier to read for other developers and users.
