@@ -59,6 +59,8 @@ namespace Unit_Converter
 
             double cF, cK, fK = 0; //temp
 
+            double kg, g, mg = 0; //mass
+
 
             switch (input) //using switch statement as it is easier to read for other developers and users.
             {
@@ -205,6 +207,34 @@ namespace Unit_Converter
                     fK = UnitConverter.FtoK(Console.ReadLine());
 
                     Console.WriteLine("Kelvin = " + Math.Round(fK, 3));
+                    break;
+                case "8": //Mass Conversion
+                    Console.Write("To Convert from Kilograms (Press A), Grams (B) or Miligrams (C)");
+                    string selection5 = Console.ReadLine();
+                    if (selection5 == "A" || selection5 == "a")
+                    {
+                        Console.Write("Enter a value in Kilograms: ");
+
+                        kg = UnitConverter.KGtoTon(Console.ReadLine());
+
+                        Console.WriteLine("Imperial Ton = " + kg);
+                    }
+                    if (selection5 == "B" || selection5 == "b")
+                    {
+                        Console.Write("Enter a value in Grams: ");
+
+                        g = UnitConverter.GtoTon(Console.ReadLine());
+
+                        Console.WriteLine("Imperial Ton = " + g);
+                    }
+                    if (selection5 == "C" || selection5 == "c")
+                    {
+                        Console.Write("Enter a value in Miligrams: ");
+
+                        mg = UnitConverter.MGtoTon(Console.ReadLine());
+
+                        Console.WriteLine("Imperial Ton = " + mg);
+                    }
                     break;
 
                 default:
@@ -353,6 +383,31 @@ namespace Unit_Converter
             double k = ((fk + 459.67) * 5 / 9);
 
             return k;
+        }
+        //Mass Conversion
+        public static double KGtoTon(string unitKGtoT)
+        {
+            double kg = double.Parse(unitKGtoT);
+
+            double ton = (kg * 0.000984207);
+
+            return ton;
+        }
+        public static double GtoTon(string unitGtoT)
+        {
+            double g = double.Parse(unitGtoT);
+
+            double ton = (g * (0.000984207 / 1000));
+
+            return ton;
+        }
+        public static double MGtoTon(string unitMGtoT)
+        {
+            double mg = double.Parse(unitMGtoT);
+
+            double ton = (mg * (0.000984207 / 100000));
+
+            return ton;
         }
     }
 }
