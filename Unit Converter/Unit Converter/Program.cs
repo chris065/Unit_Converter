@@ -50,6 +50,7 @@ namespace Unit_Converter
             Console.WriteLine("Press 11 to convert from Metric to Ounces");
 
             //Console.WriteLine("****Volume****");
+            //Console.WriteLine("****Astronomy****");
 
             Console.Write("\n = ");
 
@@ -59,7 +60,7 @@ namespace Unit_Converter
 
             double cF, cK, fK = 0; //temp
 
-            double kg, g, mg = 0; //mass
+            double kg, g, mg, kS, gS, mS, kP, gP, mP, kO, gO, mO = 0; //mass
 
 
             switch (input) //using switch statement as it is easier to read for other developers and users.
@@ -106,7 +107,7 @@ namespace Unit_Converter
 
                         kmF = UnitConverter.KmtoFeet(Console.ReadLine());
 
-                        Console.WriteLine("Feet = " + kmF);
+                        Console.WriteLine("\nFeet = " + kmF);
                     }
                     if (selection2 == "B" || selection2 == "b")
                     {
@@ -114,7 +115,7 @@ namespace Unit_Converter
 
                         mF = UnitConverter.MtoFeet(Console.ReadLine());
 
-                        Console.WriteLine("Feet = " + mF);
+                        Console.WriteLine("\nFeet = " + mF);
                     }
                     if (selection2 == "C" || selection2 == "c")
                     {
@@ -122,7 +123,7 @@ namespace Unit_Converter
 
                         cmF = UnitConverter.CmtoFeet(Console.ReadLine());
 
-                        Console.WriteLine("Feet = " + cmF);
+                        Console.WriteLine("\nFeet = " + cmF);
                     }
                     break;
 
@@ -136,7 +137,7 @@ namespace Unit_Converter
 
                         kmM = UnitConverter.KmtoMiles(Console.ReadLine());
 
-                        Console.WriteLine("Miles = " + kmM);
+                        Console.WriteLine("\nMiles = " + kmM);
                     }
                     if (selection3 == "B" || selection3 == "b")
                     {
@@ -144,7 +145,7 @@ namespace Unit_Converter
 
                         mM = UnitConverter.MtoMiles(Console.ReadLine());
 
-                        Console.WriteLine("Miles = " + mM);
+                        Console.WriteLine("\nMiles = " + mM);
                     }
                     if (selection3 == "C" || selection3 == "c")
                     {
@@ -152,7 +153,7 @@ namespace Unit_Converter
 
                         cmM = UnitConverter.CMtoMiles(Console.ReadLine());
 
-                        Console.WriteLine("Miles = " + cmM);
+                        Console.WriteLine("\nMiles = " + cmM);
                     }
                     break;
 
@@ -166,7 +167,7 @@ namespace Unit_Converter
 
                         kmY = UnitConverter.KmtoYards(Console.ReadLine());
 
-                        Console.WriteLine("Yards = " + kmY);
+                        Console.WriteLine("\nYards = " + kmY);
                     }
                     if (selection4 == "B" || selection4 == "b")
                     {
@@ -174,7 +175,7 @@ namespace Unit_Converter
 
                         mY = UnitConverter.MtoYards(Console.ReadLine());
 
-                        Console.WriteLine("Yards = " + mY);
+                        Console.WriteLine("\nYards = " + mY);
                     }
                     if (selection4 == "C" || selection4 == "c")
                     {
@@ -182,7 +183,7 @@ namespace Unit_Converter
 
                         cmY = UnitConverter.CmtoYards(Console.ReadLine());
 
-                        Console.WriteLine("Yards = " + cmY);
+                        Console.WriteLine("\nYards = " + cmY);
                     }
                     break;
 
@@ -191,7 +192,7 @@ namespace Unit_Converter
 
                     cF = UnitConverter.CtoF(Console.ReadLine());
 
-                    Console.WriteLine("Fahrenheit = " + cF);
+                    Console.WriteLine("\nFahrenheit = " + cF);
 
                     break;
                 case "6": //kelvin conversion
@@ -199,14 +200,14 @@ namespace Unit_Converter
 
                     cK = UnitConverter.CtoK(Console.ReadLine());
 
-                    Console.WriteLine("Kelvin = " + cK);
+                    Console.WriteLine("\nKelvin = " + cK);
                     break;
                 case "7": //f to kelvin conversion
                     Console.Write("Enter a value in Fahrenheit: ");
 
                     fK = UnitConverter.FtoK(Console.ReadLine());
 
-                    Console.WriteLine("Kelvin = " + Math.Round(fK, 3));
+                    Console.WriteLine("\nKelvin = " + Math.Round(fK, 3));
                     break;
                 case "8": //Mass Conversion
                     Console.Write("To Convert from Kilograms (Press A), Grams (B) or Miligrams (C)");
@@ -217,7 +218,7 @@ namespace Unit_Converter
 
                         kg = UnitConverter.KGtoTon(Console.ReadLine());
 
-                        Console.WriteLine("Imperial Ton = " + kg);
+                        Console.WriteLine("\nImperial Ton = " + kg);
                     }
                     if (selection5 == "B" || selection5 == "b")
                     {
@@ -225,7 +226,7 @@ namespace Unit_Converter
 
                         g = UnitConverter.GtoTon(Console.ReadLine());
 
-                        Console.WriteLine("Imperial Ton = " + g);
+                        Console.WriteLine("\nImperial Ton = " + g);
                     }
                     if (selection5 == "C" || selection5 == "c")
                     {
@@ -233,15 +234,102 @@ namespace Unit_Converter
 
                         mg = UnitConverter.MGtoTon(Console.ReadLine());
 
-                        Console.WriteLine("Imperial Ton = " + mg);
+                        Console.WriteLine("\nImperial Ton = " + mg);
                     }
                     break;
+                case "9":
+                    Console.Write("To convert to from Kilograms (Press A), Grams (B) or Miligrams (C): ");
+                    string selection6 = Console.ReadLine();
 
+                    if (selection6 == "A" || selection6 == "a")
+                    {
+                        Console.Write("Enter a value in Kilograms: ");
+
+                        kS = UnitConverter.KGtoStone(Console.ReadLine());
+
+                        Console.WriteLine("\nStones = " + kS); 
+                    }
+                    if (selection6 == "B" || selection6 == "b")
+                    {
+                        Console.Write("Enter a value in Grams: ");
+
+                        gS = UnitConverter.GtoStone(Console.ReadLine());
+
+                        Console.WriteLine("\nStones = " + gS);
+                    }
+                    if (selection6 == "C" || selection6 == "c")
+                    {
+                        Console.Write("Enter a value in Miligrams: ");
+
+                        mS = UnitConverter.MGtoStone(Console.ReadLine());
+
+                        Console.WriteLine("\nStones = " + mS);
+                    }
+                    break;
+                    //Pounds Conversion
+                case "10":
+                    Console.Write("To convert from Kilograms (Press A), Grams (B) or Miligrams (C)");
+                    string selection7 = Console.ReadLine();
+
+                    if (selection7 == "A" || selection7 == "a")
+                    {
+                        Console.Write("Enter a value in Kilograms: ");
+
+                        kP = UnitConverter.KGtoPounds(Console.ReadLine());
+
+                        Console.WriteLine("\nPounds = " + kP);
+                    }
+                    if (selection7 == "B" || selection7 == "b")
+                    {
+                        Console.Write("Enter a value in Grams: ");
+
+                        gP = UnitConverter.GtoPounds(Console.ReadLine());
+
+                        Console.WriteLine("\nPounds = " + gP);
+                    }
+                    if (selection7 == "C" || selection7 == "c")
+                    {
+                        Console.Write("Enter a value in Miligrams: ");
+
+                        mP = UnitConverter.MGtoPounds(Console.ReadLine());
+
+                        Console.WriteLine("\nPounds = " + mP);
+                    }
+                    break;
+                case "11":
+                    Console.Write("To convert from Kilograms (Press A), Grams (B) or Miligrams (C): ");
+                    string selection8 = Console.ReadLine();
+
+                    if (selection8 == "A" || selection8 == "a")
+                    {
+                        Console.Write("Enter a value in Kilograms: ");
+
+                        kO = UnitConverter.KGtoOunce(Console.ReadLine());
+
+                        Console.WriteLine("\n Ounces = " + kO);
+                    }
+                    if (selection8 == "B" || selection8 == "b")
+                    {
+                        Console.Write("Enter a value in Grams: ");
+
+                        gO = UnitConverter.GtoOunce(Console.ReadLine());
+
+                        Console.WriteLine("\n Ounces = " + gO);
+                    }
+                    if (selection8 == "C" || selection8 == "c")
+                    {
+                        Console.Write("Enter a value in Miligrams: ");
+
+                        mO = UnitConverter.MGtoOunce(Console.ReadLine());
+
+                        Console.WriteLine("\n Ounces = " + mO);
+                    }
+                    break;
                 default:
                     Console.WriteLine("please select something to convert");
                     break;
             }
-            Console.WriteLine("Do you want to continue? \n Press 1 if so, or to exit press any other key.");
+            Console.WriteLine("\nDo you want to continue? \n Press 1 if so, or to exit press any other key.");
             Console.Write("= ");
 
             string input2 = Console.ReadLine();
@@ -385,6 +473,8 @@ namespace Unit_Converter
             return k;
         }
         //Mass Conversion
+
+        //Ton Conversion
         public static double KGtoTon(string unitKGtoT)
         {
             double kg = double.Parse(unitKGtoT);
@@ -408,6 +498,81 @@ namespace Unit_Converter
             double ton = (mg * (0.000984207 / 100000));
 
             return ton;
+        }
+        //Stone Conversion
+        public static double KGtoStone(string unitKtoS)
+        {
+            double kg = double.Parse(unitKtoS);
+
+            double stone = (kg * 0.157473);
+
+            return stone;
+        }
+        public static double GtoStone(string unitGtoS)
+        {
+            double g = double.Parse(unitGtoS);
+
+            double stone = (g * (0.157473 / 1000));
+
+            return stone;
+        }
+        public static double MGtoStone(string unitMGtoS)
+        {
+            double mg = double.Parse(unitMGtoS);
+
+            double stone = (mg * (0.157473 / 100000));
+
+            return stone;
+        }
+        //Pounds Conversion
+        public static double KGtoPounds(string unitKGtoP)
+        {
+            double kg = double.Parse(unitKGtoP);
+
+            double pounds = (kg * 2.20462);
+
+            return pounds;
+        }
+        public static double GtoPounds(string unitGtoP)
+        {
+            double g = double.Parse(unitGtoP);
+
+            double pounds = (g * (2.20462 / 1000));
+
+            return pounds;
+        }
+        public static double MGtoPounds(string unitMGtoP)
+        {
+            double mg = double.Parse(unitMGtoP);
+
+            double pounds = (mg * (2.20462 / 100000));
+
+            return pounds;
+        }
+        //Ounce Conversion
+        public static double KGtoOunce(string unitKGtoO)
+        {
+            double kg = double.Parse(unitKGtoO);
+
+            double ounce = (kg * 35.274);
+
+            return ounce;
+        }
+        public static double GtoOunce(string unitGtoO)
+        {
+            double g = double.Parse(unitGtoO);
+
+            double ounce = (g * (35.274 / 1000));
+
+            return ounce;
+        }
+        public static double MGtoOunce(string unitMGtoO)
+        {
+            double mg = double.Parse(unitMGtoO);
+
+            double ounce = (mg * (35.274 / 100000));
+
+            return ounce;
         }
     }
 }

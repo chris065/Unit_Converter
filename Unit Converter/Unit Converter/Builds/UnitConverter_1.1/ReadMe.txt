@@ -2,7 +2,7 @@ To install the application, click on the "setup.exe" and then click "install" wh
 
 Then the application should launch, once it has finished installing. 
 
-if there are any bugs visit this page: https://github.com/chris065/Unit_Converter/issues and report the issue there.
+if there are any bugs and or issues, visit this page: https://github.com/chris065/Unit_Converter/issues and report the issue there.
 
 Enjoy.
 
