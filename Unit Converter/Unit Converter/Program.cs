@@ -19,11 +19,6 @@ namespace Unit_Converter
             //KG = 0.157473 Stone
             //1KG = 2.20462 Pounds
             //1KG = 35.274 Ounce
-<<<<<<< HEAD
-=======
-            Console.WriteLine("***Unit Converter 1.3***");
->>>>>>> c816231b8a8319e34f342566d2c0cacdaf875925
-
             //1AU = 1.5x10^11 M
             //1Pc = 3.26 ly
             //1Pc = 2.06x10^5 AU
