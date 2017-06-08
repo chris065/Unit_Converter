@@ -13,15 +13,35 @@ namespace Unit_Converter
             //1KM = 39370.1 inches
             //1KM = 3280.84 foot
             //1KM = 0.621371 miles
-            //1KM = 1093.61 yards 
+            //1KM = 1093.61 yards
 
-            //1KG = 0.000984207 Imperial Ton 
+            //1KG = 0.000984207 Imperial Ton
             //KG = 0.157473 Stone
             //1KG = 2.20462 Pounds
             //1KG = 35.274 Ounce
-            Console.WriteLine("***Unit Converter 1.2***");
 
+            //1AU = 1.5x10^11 M
+            //1Pc = 3.26 ly
+            //1Pc = 2.06x10^5 AU
+            //1Pc = 3.08x10^16 M
+            //1 ly = 9.46x10^15 M
+
+            //1 L = 0.219969 Imperial Gallon
+            //1 L = 0.879876 Imperial Quart
+            //1 L = 1.759752 Imperial Pint
+            //1 L = 3.519504 Imperial Cup
+            //1 l = 35.19503 Imperial Fluid Ounce
+
+           /*To work out distance in meters from light distance:
+            use the equation s(distance) = v * t (velocity * time) where the speed of light is equal to 3x10^8
+            so for a light day you know the speed of light so times that by 24 * 60 * 60 (because you have to convert the length of the day into seconds).*/
+
+            Console.WriteLine("***Unit Converter 1.4 BETA***");
+
+            Console.WriteLine("\n");
             Start:
+            Console.WriteLine("\n***Metric To Imperial***");
+
             Console.WriteLine("\n****Lengths****");
             Console.WriteLine("Press 1 To convert from Metric to Inches "); //asking for user input
 
@@ -49,8 +69,25 @@ namespace Unit_Converter
 
             Console.WriteLine("Press 11 to convert from Metric to Ounces");
 
-            //Console.WriteLine("****Volume****");
-            //Console.WriteLine("****Astronomy****");
+
+            Console.WriteLine("\n****Astronomy****");
+            Console.WriteLine("Press 12 to convert from AU (Astronomical Unit) to meters");
+
+            Console.WriteLine("Press 13 to convert from Light Distance to meters");
+
+            Console.WriteLine("Press 14 to convert from Parsec to other units");
+
+
+            Console.WriteLine("\n****Volume****");
+            Console.WriteLine("Press 15 to convert from Metric to Imperial Gallon");
+
+            Console.WriteLine("Press 16 to convert from Metric to Imperial Quart");
+
+            Console.WriteLine("Press 17 to convert from Metric to Imperial Pint");
+
+            Console.WriteLine("Press 18 to convert from Metric to Imperial Cup");
+
+            Console.WriteLine("Press 19 to convert from Metric to Imperial Fluid Ounce");
 
             Console.Write("\n = ");
 
@@ -61,6 +98,10 @@ namespace Unit_Converter
             double cF, cK, fK = 0; //temp
 
             double kg, g, mg, kS, gS, mS, kP, gP, mP, kO, gO, mO = 0; //mass
+
+            double AU, LD, LM, LY, pAU, pM, pLY = 0; // Astro
+
+            double lIG, mlIG, lIQ, mLIQ, lIP, mLIP, lIC, mLIC, lFO, mLFO = 0; //Volume
 
 
             switch (input) //using switch statement as it is easier to read for other developers and users.
@@ -247,7 +288,7 @@ namespace Unit_Converter
 
                         kS = UnitConverter.KGtoStone(Console.ReadLine());
 
-                        Console.WriteLine("\nStones = " + kS); 
+                        Console.WriteLine("\nStones = " + kS);
                     }
                     if (selection6 == "B" || selection6 == "b")
                     {
@@ -325,6 +366,73 @@ namespace Unit_Converter
                         Console.WriteLine("\n Ounces = " + mO);
                     }
                     break;
+
+                case "12":
+                    Console.Write("Enter a value in AU: ");
+
+                    AU = UnitConverter.AUtoMeter(Console.ReadLine());
+
+                    Console.WriteLine("\n Meters = " + AU);
+                    break;
+                case "13":
+                    Console.Write("To convert from Light Days (Press A), Months (B) or Years (C): ");
+                    string selection9 = Console.ReadLine();
+
+                    if (selection9 == "A" || selection9 == "a")
+                    {
+                        Console.Write("Enter a value in Light Days: ");
+
+                        LD = UnitConverter.LDtoMeter(Console.ReadLine());
+
+                        Console.WriteLine("\n Meters = " + LD);
+                    }
+                    if (selection9 == "B" || selection9 == "b")
+                    {
+                        Console.Write("Enter a value in Light Months: ");
+
+                        LM = UnitConverter.LMtoMeter(Console.ReadLine());
+
+                        Console.WriteLine("\n Meters = " + LM);
+                    }
+                    if (selection9 == "C" || selection9 == "c")
+                    {
+                        Console.Write("Enter a value in Light Years: ");
+
+                        LY = UnitConverter.LYtoMeter(Console.ReadLine());
+
+                        Console.WriteLine("\n Meters = " + LY);
+                    }
+
+                    break;
+                case "14":
+                    Console.Write("To convert from Parsec to AU Press (A), Meter (B) or Light Years (C): ");
+                    string selection10 = Console.ReadLine();
+
+                    if (selection10 == "A" || selection10 == "a")
+                    {
+                        Console.Write("Enter a value in Parsecs: ");
+
+                        pAU = UnitConverter.PtoAU(Console.ReadLine());
+
+                        Console.WriteLine("AU = " + pAU);
+                    }
+                    if (selection10 == "B" || selection10 == "b")
+                    {
+                        Console.Write("Enter a value in Parsecs: ");
+
+                        pM = UnitConverter.PtoM(Console.ReadLine());
+
+                        Console.WriteLine("Meters = " + pM);
+                    }
+                    if (selection10 == "C" || selection10 == "c")
+                    {
+                        Console.Write("Enter a value in Parsecs: ");
+
+                        pLY = UnitConverter.PtoLY(Console.ReadLine());
+
+                        Console.WriteLine("Light Years = " + pLY);
+                    }
+                    break;
                 default:
                     Console.WriteLine("please select something to convert");
                     break;
@@ -353,7 +461,7 @@ namespace Unit_Converter
             double kilometer = double.Parse(unitKilometer);
 
             double inches = (kilometer * 39370.1);
-          
+
             return inches;
         }
         public static double MToInches(string unitMeter)
@@ -361,7 +469,7 @@ namespace Unit_Converter
             double meter = double.Parse(unitMeter);
 
             double inches = (meter * (39370.1 / 1000));
-                  
+
             return inches;
         }
         public static double CmToInches(string unitCentimeter)
@@ -454,7 +562,7 @@ namespace Unit_Converter
 
             double f = (cf * 9/5 + 32);
 
-            return f; 
+            return f;
         }
         public static double CtoK(string unitCtoK)
         {
@@ -573,6 +681,144 @@ namespace Unit_Converter
             double ounce = (mg * (35.274 / 100000));
 
             return ounce;
+        }
+        //Astronomy Units
+        public static double AUtoMeter(string unitAUtoM)
+        {
+            double m = double.Parse(unitAUtoM);
+
+            double AU = (m * 150000000000);
+
+            return AU;
+        }
+        public static double LDtoMeter(string unitLDtoM)
+        {
+            double m = double.Parse(unitLDtoM);
+
+           double lD = (m * (300000000UL * (24 * 60 * 60)));
+
+            return lD;
+        }
+        public static double LMtoMeter(string unitLMtoM)
+        {
+            double m = double.Parse(unitLMtoM);
+
+            double lM = (m * (300000000UL * (31 * 24 * 60 * 60)));
+
+            return lM;
+        }
+        public static double LYtoMeter(string unitLYtoM)
+        {
+            double m = double.Parse(unitLYtoM);
+
+            double lY = (m * (300000000UL * (365.25 * 24 * 60 * 60)));
+
+            return lY;
+        }
+        public static double PtoAU(string unitPtoAU)
+        {
+            double p = double.Parse(unitPtoAU);
+
+            double AU = (p * 2060000);
+
+            return AU;
+        }
+        public static double PtoM(string unitPtoM)
+        {
+            double p = double.Parse(unitPtoM);
+
+            double m = (p * 30800000000000000);
+
+            return m;
+        }
+        public static double PtoLY(string unitPtoLY)
+        {
+            double p = double.Parse(unitPtoLY);
+
+            double LY = (p * 3.26);
+
+            return LY;
+        }
+        //Volume Conversion
+        public static double LtoGall(string unitLtoG)
+        {
+            double l = double.Parse(unitLtoG);
+
+            double Gall = (l * 0.219969);
+
+            return Gall;
+        }
+        public static double mLToGall(string unitMLtoG)
+        {
+            double mL = double.Parse(unitMLtoG);
+
+            double Gall = (mL * (0.219969 / 1000));
+
+            return Gall;
+        }
+        public static double LtoIQ(string unitLtoIQ)
+        {
+            double l = double.Parse(unitLtoIQ);
+
+            double IQ = (l * 0.879876);
+
+            return IQ;
+        }
+        public static double mLToIQ(string unitMLtoIQ)
+        {
+            double mL = double.Parse(unitMLtoIQ);
+
+            double IQ = (mL * (0.879876 / 1000));
+
+            return IQ;
+        }
+        public static double LToPint(string unitLtoP)
+        {
+            double l = double.Parse(unitLtoP);
+
+            double pint = (l * 1.759752);
+
+            return pint;
+        }
+        public static double mLtoPint(string unitMLtoP)
+        {
+            double mL = double.Parse(unitMLtoP);
+
+            double pint = (mL * (1.759752 / 1000));
+
+            return pint;
+        }
+        public static double LtoCup(string unitLtoC)
+        {
+            double l = double.Parse(unitLtoC);
+
+            double cup = (l * 3.519504);
+
+            return cup;
+        }
+        public static double mLtoCup(string unitMLtoC)
+        {
+            double mL = double.Parse(unitMLtoC);
+
+            double cup = (mL * (3.519504 / 1000));
+
+            return cup;
+        }
+        public static double LtoFO(string unitLtoFO)
+        {
+            double l = double.Parse(unitLtoFO);
+
+            double FO = (l * 35.19503);
+
+            return FO;
+        }
+        public static double mLtoFO(string unitMLtoFO)
+        {
+            double mL = double.Parse(unitMLtoFO);
+
+            double FO = (mL * (35.19503 / 1000));
+
+            return FO;
         }
     }
 }
