@@ -432,6 +432,91 @@ namespace Unit_Converter
                         Console.WriteLine("Light Years = " + pLY);
                     }
                     break;
+                case "15":
+                    Console.Write("To convert from Liters (Press A) or Mililiters (B): ");
+                    string selection11 = Console.ReadLine();
+
+                    if (selection11 == "A" || selection11 == "a")
+                    {
+                        Console.Write("Enter a value in Liters: ");
+
+                        lIG = UnitConverter.LtoGall(Console.ReadLine());
+
+                        Console.WriteLine("\n Imperial Gallon = " + lIG);
+                    }
+                    if (selection11 == "B" || selection11 == "b")
+                    {
+                        Console.Write("Enter a value in Mililiters: ");
+
+                        mlIG = UnitConverter.mLToGall(Console.ReadLine());
+
+                        Console.WriteLine("Imperial Gallon = " + mlIG);
+                    }
+                    break;
+                case "16":
+                    Console.Write("To convert from Liters (Press A) or Mililiters (B): ");
+                    string selection12 = Console.ReadLine();
+
+                    if (selection12 == "A" || selection12 == "a")
+                    {
+                        Console.Write("Enter a value in Liters: ");
+
+                        lIQ = UnitConverter.LtoIQ(Console.ReadLine());
+
+                        Console.WriteLine("\n Imperial Quart: " + lIQ);
+                    }
+                    if (selection12 == "B" || selection12 == "b")
+                    {
+                        Console.Write("Enter a value in Mililiters: ");
+
+                        mLIQ = UnitConverter.mLToIQ(Console.ReadLine());
+
+                        Console.WriteLine("\n Imperial Quart = " + mLIQ);
+                    }
+                    break;
+                case "17":
+                    Console.Write("To convert from Liters (Press A) or Militers (B): ");
+                    string selection13 = Console.ReadLine();
+
+                    if (selection13 == "A" || selection13 == "a")
+                    {
+                        Console.Write("Enter a value in Liters: ");
+
+                        lIP = UnitConverter.LToPint(Console.ReadLine());
+
+                        Console.WriteLine("\n Imperial Pint = " + lIP); 
+                    }
+                    if (selection13 == "B" || selection13 == "b")
+                    {
+                        Console.Write("Enter a value in Mililiters: ");
+
+                        mLIP = UnitConverter.mLtoPint(Console.ReadLine());
+
+                        Console.WriteLine("\n Imperial Pint  = " + mLIP);
+                    }
+                    break;
+                case "18":
+                    Console.Write("To convert from Liters (Press A) or Mililiters (B): ");
+                    string selection14 = Console.ReadLine();
+
+                    if (selection14 == "A" || selection14 == "a")
+                    {
+                        Console.Write("Enter a value in Liters: ");
+
+                        lIC = UnitConverter.LtoCup(Console.ReadLine());
+
+                        Console.WriteLine("\n Imperial Cup = " + lIC);
+                    }
+                    if (selection14 == "B" || selection14 == "b")
+                    {
+                        Console.WriteLine("Enter a value in Mililiters: ");
+
+                        mLIC = UnitConverter.mLtoCup(Console.ReadLine());
+
+                        Console.WriteLine("\n Imperial Cup = " + mLIC);
+                    }
+
+                    break;
                 default:
                     Console.WriteLine("please select something to convert");
                     break;
