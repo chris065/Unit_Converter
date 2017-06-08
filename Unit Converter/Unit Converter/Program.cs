@@ -19,7 +19,7 @@ namespace Unit_Converter
             //KG = 0.157473 Stone
             //1KG = 2.20462 Pounds
             //1KG = 35.274 Ounce
-            Console.WriteLine("***Unit Converter 1.2***");
+            Console.WriteLine("***Unit Converter 1.3***");
 
             Start:
             Console.WriteLine("\n****Lengths****");
