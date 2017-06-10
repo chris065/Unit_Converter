@@ -484,7 +484,7 @@ namespace Unit_Converter
 
                         lIP = UnitConverter.LToPint(Console.ReadLine());
 
-                        Console.WriteLine("\n Imperial Pint = " + lIP); 
+                        Console.WriteLine("\n Imperial Pint = " + lIP);
                     }
                     if (selection13 == "B" || selection13 == "b")
                     {
@@ -516,6 +516,27 @@ namespace Unit_Converter
                         Console.WriteLine("\n Imperial Cup = " + mLIC);
                     }
 
+                    break;
+                case "19":
+                    Console.Write("To convert from Liters (Press A) or Milliters (B): ");
+                    string selection15 = Console.ReadLine();
+
+                    if (selection15 == "A" || selection15 == "a")
+                    {
+                        Console.Write("Enter a value in Liters: ");
+
+                        lFO = UnitConverter.LtoFO(Console.ReadLine());
+
+                        Console.WriteLine("\n Fluid Ounce = " + lFO);
+                    }
+                    if (selection15 == "B" || selection15 == "b")
+                    {
+                        Console.Write("Enter a value in Mililters: ");
+
+                        mLFO = UnitConverter.mLtoFO(Console.ReadLine());
+
+                        Console.WriteLine("\n Fluid Ounce = " + mLFO);
+                    }
                     break;
                 default:
                     Console.WriteLine("please select something to convert");
