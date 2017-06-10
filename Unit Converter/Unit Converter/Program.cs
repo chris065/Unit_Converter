@@ -35,7 +35,7 @@ namespace Unit_Converter
             use the equation s(distance) = v * t (velocity * time) where the speed of light is equal to 3x10^8
             so for a light day you know the speed of light so times that by 24 * 60 * 60 (because you have to convert the length of the day into seconds).*/
 
-            Console.WriteLine("***Unit Converter 1.4 BETA***");
+            Console.WriteLine("***Unit Converter 1.3***");
 
             Console.WriteLine("\n");
             Start:

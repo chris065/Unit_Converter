@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Christopher\Desktop\GitHub\Programs\Unit_Converter\Unit Converter\Unit Converter\Builds\</PublishUrl>
+    <PublishUrl>C:\Users\Christopher\Desktop\GitHub\Programs\Unit_Converter\Unit Converter\Unit Converter\Builds\UnitConverter_1.3\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
